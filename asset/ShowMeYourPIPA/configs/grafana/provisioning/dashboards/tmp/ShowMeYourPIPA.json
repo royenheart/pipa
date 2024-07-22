@@ -605,6 +605,76 @@
                 "type": "frser-sqlite-datasource",
                 "uid": "${Database}"
             },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "fieldMinMax": false,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 7,
+                "x": 8,
+                "y": 18
+            },
+            "id": 13,
+            "options": {
+                "colorMode": "background_solid",
+                "graphMode": "area",
+                "justifyMode": "center",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/.*/",
+                    "values": false
+                },
+                "textMode": "value_and_name",
+                "wideLayout": false
+            },
+            "pluginVersion": "10.2.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "frser-sqlite-datasource",
+                        "uid": "d411eb66-539a-4867-91b8-374c82f650d0"
+                    },
+                    "queryText": "SELECT username AS \"Owner\", record AS \"Record\", platform AS \"Platform\" FROM \"$Table\" WHERE Record = \"$Record\";",
+                    "queryType": "table",
+                    "rawQueryText": "SELECT username AS \"Owner\", record AS \"Record\", platform AS \"Platform\" FROM \"$Table\" WHERE Record = \"$Record\";",
+                    "refId": "INFO",
+                    "timeColumns": [
+                        "time",
+                        "ts"
+                    ]
+                }
+            ],
+            "title": "Record Info",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "frser-sqlite-datasource",
+                "uid": "${Database}"
+            },
             "description": "Average Memory Utilization",
             "fieldConfig": {
                 "defaults": {
@@ -1264,8 +1334,8 @@
             {
                 "current": {
                     "selected": true,
-                    "text": "rocksdb-2024-07-17 12:11:32",
-                    "value": "rocksdb-2024-07-17 12:11:32"
+                    "text": "rocksdb-2024-07-18 23:13:40",
+                    "value": "rocksdb-2024-07-18 23:13:40"
                 },
                 "datasource": {
                     "type": "frser-sqlite-datasource",
